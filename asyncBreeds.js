@@ -5,7 +5,7 @@ const breedDetailsFromFile = function(breed, functionToRunWhenThingsAreDone) {
   fs.readFile(`./data/${breed}.txt`, 'utf8', (error, data) => {
     // CHANGE: Pass data into callback instead of returning it directly
     console.log("In readFile's Callback: it has the data.");
-    if (!error) functionToRunWhenThingsAreDone(data);
+      functionToRunWhenThingsAreDone(data);
   });
 };
 
@@ -15,4 +15,6 @@ const printOutCatBreed = breed => {
 };
 
 // CHANGE 2: we're now passing two arguments into breedDetailsFromFile: breed string and a callback function
-breedDetailsFromFile('Bombay', printOutCatBreed);
+//breedDetailsFromFile('Bombay', printOutCatBreed);
+
+module.exports = breedDetailsFromFile;
